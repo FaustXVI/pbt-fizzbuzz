@@ -22,8 +22,6 @@ public class FizzBuzzTest {
     }
 
     private String fizzBuzz(int n) {
-        return n == 4 ? "4"
-                : n == 2 ? "2"
-                : "1";
+        return String.valueOf(n);
     }
 }
