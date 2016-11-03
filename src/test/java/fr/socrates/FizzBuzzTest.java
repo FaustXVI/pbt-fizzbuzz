@@ -49,6 +49,7 @@ public class FizzBuzzTest {
     private String fizzBuzz(int n) {
         return n == 3 ? "Fizz"
                 : n == 6 ? "Fizz"
+                : n == 9 ? "Fizz"
                 : String.valueOf(n);
     }
 }
