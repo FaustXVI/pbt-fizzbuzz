@@ -18,4 +18,10 @@ public class FizzBuzzPropertiesShould {
         assertThat(fizzBuzz(aMultipleOf3)).contains("Fizz");
     }
 
+    @Property
+    public void containsBuzzForAnyMultipleOf5(int aMultipleOf5) {
+        assumeTrue(aMultipleOf5 % 5 == 0);
+        assertThat(fizzBuzz(aMultipleOf5)).contains("Buzz");
+    }
+
 }
