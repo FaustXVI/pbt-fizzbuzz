@@ -10,4 +10,8 @@ public class FizzBuzzTest {
     public void shouldReturnOneGivenOne() {
         assertThat(fizzBuzz(1)).isEqualTo("1");
     }
+
+    private String fizzBuzz(int n) {
+        return null;
+    }
 }
