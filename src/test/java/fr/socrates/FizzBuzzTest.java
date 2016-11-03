@@ -59,6 +59,11 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(10)).isEqualTo("Buzz");
     }
 
+    @Test
+    public void shouldBuzzOnTwenty() {
+        assertThat(fizzBuzz(20)).isEqualTo("Buzz");
+    }
+
     private String fizzBuzz(int n) {
         return n == 5 ? "Buzz"
                 : n == 10 ? "Buzz"
