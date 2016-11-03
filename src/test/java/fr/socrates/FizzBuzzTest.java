@@ -36,6 +36,11 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(3)).isEqualTo("Fizz");
     }
 
+    @Test
+    public void shouldFizzGivenSix() {
+        assertThat(fizzBuzz(6)).isEqualTo("Fizz");
+    }
+
     private String fizzBuzz(int n) {
         return n == 3 ? "Fizz"
                 : String.valueOf(n);
