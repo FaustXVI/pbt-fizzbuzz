@@ -2,6 +2,7 @@ package fr.socrates;
 
 import com.pholser.junit.quickcheck.Property;
 import com.pholser.junit.quickcheck.runner.JUnitQuickcheck;
+import fr.socrates.MultipleOf5Generator.MultipleOf5;
 import org.junit.runner.RunWith;
 
 
@@ -19,8 +20,7 @@ public class FizzBuzzPropertiesShould {
     }
 
     @Property
-    public void containsBuzzForAnyMultipleOf5(int aMultipleOf5) {
-        assumeTrue(aMultipleOf5 % 5 == 0);
+    public void containsBuzzForAnyMultipleOf5(@MultipleOf5 int aMultipleOf5) {
         assertThat(fizzBuzz(aMultipleOf5)).contains("Buzz");
     }
 
