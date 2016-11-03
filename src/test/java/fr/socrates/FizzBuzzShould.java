@@ -6,13 +6,24 @@ import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Random;
+
 import static com.tngtech.java.junit.dataprovider.DataProviders.$;
 import static com.tngtech.java.junit.dataprovider.DataProviders.$$;
 import static fr.socrates.FizzBuzz.fizzBuzz;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assume.assumeTrue;
 
 @RunWith(DataProviderRunner.class)
 public class FizzBuzzShould {
+
+    @Test
+    public void containsFizzForAnyMultipleOf3() {
+        int aMultipleOf3 = new Random().nextInt();
+        assumeTrue(aMultipleOf3 % 3 == 0);
+        assertThat(fizzBuzz(aMultipleOf3)).contains("Fizz");
+    }
+
 
     @Test
     @UseDataProvider("multiplesOf15")
