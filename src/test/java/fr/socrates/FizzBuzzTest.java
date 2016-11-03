@@ -37,6 +37,7 @@ public class FizzBuzzTest {
     }
 
     private String fizzBuzz(int n) {
-        return String.valueOf(n);
+        return n == 3 ? "Fizz"
+                : String.valueOf(n);
     }
 }
