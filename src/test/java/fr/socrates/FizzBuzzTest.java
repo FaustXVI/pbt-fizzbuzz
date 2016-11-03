@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 
 import static com.tngtech.java.junit.dataprovider.DataProviders.$;
 import static com.tngtech.java.junit.dataprovider.DataProviders.$$;
+import static fr.socrates.FizzBuzz.fizzBuzz;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(DataProviderRunner.class)
@@ -85,10 +86,4 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(n)).isEqualTo("FizzBuzz");
     }
 
-    private String fizzBuzz(int n) {
-        return n % 15 == 0 ? "FizzBuzz"
-                : n % 5 == 0 ? "Buzz"
-                : n % 3 == 0 ? "Fizz"
-                : String.valueOf(n);
-    }
 }
