@@ -11,6 +11,11 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(1)).isEqualTo("1");
     }
 
+    @Test
+    public void shouldReturnTwoGivenTwo() {
+        assertThat(fizzBuzz(2)).isEqualTo("2");
+    }
+
     private String fizzBuzz(int n) {
         return "1";
     }
