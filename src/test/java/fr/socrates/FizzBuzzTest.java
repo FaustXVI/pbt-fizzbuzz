@@ -14,58 +14,28 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(DataProviderRunner.class)
 public class FizzBuzzTest {
 
-    @DataProvider(format = "%m%p[0]")
-    public static Object[][] nominals() {
-        return $$(
-                $(1),
-                $(2),
-                $(4),
-                $(7),
-                $(8),
-                $(101)
-        );
-    }
-
     @Test
-    @UseDataProvider("nominals")
-    public void shouldEchoInputGiven(Integer n) {
-        assertThat(fizzBuzz(n)).isEqualTo(n.toString());
-    }
-
-    @DataProvider(format = "%m%p[0]")
-    public static Object[][] multiplesOf3() {
-        return $$(
-                $(3),
-                $(6),
-                $(9),
-                $(12),
-                $(18),
-                $(303)
-        );
-    }
-
-    @Test
-    @UseDataProvider("multiplesOf3")
-    public void shouldFizzOn(Integer n) {
-        assertThat(fizzBuzz(n)).isEqualTo("Fizz");
-    }
-
-    @DataProvider(format = "%m%p[0]")
-    public static Object[][] multiplesOf5() {
-        return $$(
-                $(5),
-                $(10),
-                $(20),
-                $(25),
-                $(35),
-                $(100)
-        );
+    @UseDataProvider("multiplesOf15")
+    public void shouldFizzBuzzOn(Integer aMultipleOf15) {
+        assertThat(fizzBuzz(aMultipleOf15)).isEqualTo("FizzBuzz");
     }
 
     @Test
     @UseDataProvider("multiplesOf5")
-    public void shouldBuzzOn(Integer n) {
-        assertThat(fizzBuzz(n)).isEqualTo("Buzz");
+    public void shouldBuzzOn(Integer aMultipleOf5) {
+        assertThat(fizzBuzz(aMultipleOf5)).isEqualTo("Buzz");
+    }
+
+    @Test
+    @UseDataProvider("multiplesOf3")
+    public void shouldFizzOn(Integer aMultipleOf3) {
+        assertThat(fizzBuzz(aMultipleOf3)).isEqualTo("Fizz");
+    }
+
+    @Test
+    @UseDataProvider("nominals")
+    public void shouldEchoInputGiven(Integer otherInput) {
+        assertThat(fizzBuzz(otherInput)).isEqualTo(otherInput.toString());
     }
 
     @DataProvider(format = "%m%p[0]")
@@ -80,10 +50,40 @@ public class FizzBuzzTest {
         );
     }
 
-    @Test
-    @UseDataProvider("multiplesOf15")
-    public void shouldFizzBuzzOn(Integer n) {
-        assertThat(fizzBuzz(n)).isEqualTo("FizzBuzz");
+    @DataProvider(format = "%m%p[0]")
+    public static Object[][] multiplesOf5() {
+        return $$(
+                $(5),
+                $(10),
+                $(20),
+                $(25),
+                $(35),
+                $(100)
+        );
+    }
+
+    @DataProvider(format = "%m%p[0]")
+    public static Object[][] multiplesOf3() {
+        return $$(
+                $(3),
+                $(6),
+                $(9),
+                $(12),
+                $(18),
+                $(303)
+        );
+    }
+
+    @DataProvider(format = "%m%p[0]")
+    public static Object[][] nominals() {
+        return $$(
+                $(1),
+                $(2),
+                $(4),
+                $(7),
+                $(8),
+                $(101)
+        );
     }
 
 }
