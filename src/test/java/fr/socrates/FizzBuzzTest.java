@@ -31,6 +31,11 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(n)).isEqualTo(n.toString());
     }
 
+    @Test
+    public void shouldFizzGivenThree() {
+        assertThat(fizzBuzz(3)).isEqualTo("Fizz");
+    }
+
     private String fizzBuzz(int n) {
         return String.valueOf(n);
     }
