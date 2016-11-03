@@ -1,24 +1,31 @@
 package fr.socrates;
 
+import com.tngtech.java.junit.dataprovider.DataProvider;
+import com.tngtech.java.junit.dataprovider.DataProviderRunner;
+import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import static com.tngtech.java.junit.dataprovider.DataProviders.$;
+import static com.tngtech.java.junit.dataprovider.DataProviders.$$;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@RunWith(DataProviderRunner.class)
 public class FizzBuzzTest {
 
-    @Test
-    public void shouldReturnOneGivenOne() {
-        assertThat(fizzBuzz(1)).isEqualTo("1");
+    @DataProvider(format = "%m%p[0]")
+    public static Object[][] nominals() {
+        return $$(
+                $(1),
+                $(2),
+                $(4)
+        );
     }
 
     @Test
-    public void shouldReturnTwoGivenTwo() {
-        assertThat(fizzBuzz(2)).isEqualTo("2");
-    }
-
-    @Test
-    public void shouldReturnFourGivenFour() {
-        assertThat(fizzBuzz(4)).isEqualTo("4");
+    @UseDataProvider("nominals")
+    public void shouldEchoInputGiven(Integer n) {
+        assertThat(fizzBuzz(n)).isEqualTo(n.toString());
     }
 
     private String fizzBuzz(int n) {
