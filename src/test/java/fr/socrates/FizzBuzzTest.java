@@ -31,19 +31,19 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(n)).isEqualTo(n.toString());
     }
 
-    @Test
-    public void shouldFizzGivenThree() {
-        assertThat(fizzBuzz(3)).isEqualTo("Fizz");
+    @DataProvider(format = "%m%p[0]")
+    public static Object[][] multiplesOf3() {
+        return $$(
+                $(3),
+                $(6),
+                $(9)
+        );
     }
 
     @Test
-    public void shouldFizzGivenSix() {
-        assertThat(fizzBuzz(6)).isEqualTo("Fizz");
-    }
-
-    @Test
-    public void shouldFizzGivenNine() {
-        assertThat(fizzBuzz(9)).isEqualTo("Fizz");
+    @UseDataProvider("multiplesOf3")
+    public void shouldFizzOn(Integer n) {
+        assertThat(fizzBuzz(n)).isEqualTo("Fizz");
     }
 
     private String fizzBuzz(int n) {
