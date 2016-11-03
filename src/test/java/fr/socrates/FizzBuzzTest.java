@@ -49,19 +49,19 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(n)).isEqualTo("Fizz");
     }
 
-    @Test
-    public void shouldBuzzOnFive() {
-        assertThat(fizzBuzz(5)).isEqualTo("Buzz");
+    @DataProvider(format = "%m%p[0]")
+    public static Object[][] multiplesOf5() {
+        return $$(
+                $(5),
+                $(10),
+                $(20)
+        );
     }
 
     @Test
-    public void shouldBuzzOnTen() {
-        assertThat(fizzBuzz(10)).isEqualTo("Buzz");
-    }
-
-    @Test
-    public void shouldBuzzOnTwenty() {
-        assertThat(fizzBuzz(20)).isEqualTo("Buzz");
+    @UseDataProvider("multiplesOf5")
+    public void shouldBuzzOn(Integer n) {
+        assertThat(fizzBuzz(n)).isEqualTo("Buzz");
     }
 
     private String fizzBuzz(int n) {
