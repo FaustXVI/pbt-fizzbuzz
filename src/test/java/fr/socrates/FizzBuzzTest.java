@@ -18,7 +18,10 @@ public class FizzBuzzTest {
         return $$(
                 $(1),
                 $(2),
-                $(4)
+                $(4),
+                $(7),
+                $(8),
+                $(101)
         );
     }
 
