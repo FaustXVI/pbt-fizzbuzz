@@ -49,6 +49,11 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz(n)).isEqualTo("Fizz");
     }
 
+    @Test
+    public void shouldBuzzOnFive() {
+        assertThat(fizzBuzz(5)).isEqualTo("Buzz");
+    }
+
     private String fizzBuzz(int n) {
         return n % 3 == 0 ? "Fizz"
                 : String.valueOf(n);
