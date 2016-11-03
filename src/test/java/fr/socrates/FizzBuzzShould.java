@@ -12,29 +12,29 @@ import static fr.socrates.FizzBuzz.fizzBuzz;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(DataProviderRunner.class)
-public class FizzBuzzTest {
+public class FizzBuzzShould {
 
     @Test
     @UseDataProvider("multiplesOf15")
-    public void shouldFizzBuzzOn(Integer aMultipleOf15) {
+    public void fizzBuzzOn(Integer aMultipleOf15) {
         assertThat(fizzBuzz(aMultipleOf15)).isEqualTo("FizzBuzz");
     }
 
     @Test
     @UseDataProvider("multiplesOf5")
-    public void shouldBuzzOn(Integer aMultipleOf5) {
+    public void buzzOn(Integer aMultipleOf5) {
         assertThat(fizzBuzz(aMultipleOf5)).isEqualTo("Buzz");
     }
 
     @Test
     @UseDataProvider("multiplesOf3")
-    public void shouldFizzOn(Integer aMultipleOf3) {
+    public void fizzOn(Integer aMultipleOf3) {
         assertThat(fizzBuzz(aMultipleOf3)).isEqualTo("Fizz");
     }
 
     @Test
     @UseDataProvider("nominals")
-    public void shouldEchoInputGiven(Integer otherInput) {
+    public void echoInputGiven(Integer otherInput) {
         assertThat(fizzBuzz(otherInput)).isEqualTo(otherInput.toString());
     }
 
