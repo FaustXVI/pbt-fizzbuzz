@@ -67,6 +67,7 @@ public class FizzBuzzTest {
     private String fizzBuzz(int n) {
         return n == 5 ? "Buzz"
                 : n == 10 ? "Buzz"
+                : n == 20 ? "Buzz"
                 : n % 3 == 0 ? "Fizz"
                 : String.valueOf(n);
     }
