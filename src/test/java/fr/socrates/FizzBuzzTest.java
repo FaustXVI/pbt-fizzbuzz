@@ -17,6 +17,7 @@ public class FizzBuzzTest {
     }
 
     private String fizzBuzz(int n) {
-        return "1";
+        return n == 2 ? "2"
+                : "1";
     }
 }
